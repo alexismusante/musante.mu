@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html translate="no">
+<head>
+  <title>MUSANTE.MU</title>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="google" content="notranslate" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html, body {
+      height: 100%;
+      background: #0a0a0b;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 1.5rem;
+    }
+
+    .logo {
+      font-size: clamp(0.85rem, 4vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      user-select: none;
+      color: #f0f0f0;
+    }
+
+    .logo .dot-mu {
+      color: #6d4aff;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: clamp(0.45rem, 2vw, 0.55rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #666;
+      padding: 0 1rem;
+      animation: slideup 1.2s ease forwards;
+    }
+
+    @keyframes slideup {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">MUSANTE<span class="dot-mu">.MU</span></div>
+  <footer>&copy; <span id="year"></span> <span id="copyright"></span></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const lang = navigator.language || navigator.userLanguage;
+    document.getElementById('copyright').textContent = lang.startsWith('es')
+      ? 'MUSANTE.MU. TODOS LOS DERECHOS RESERVADOS.'
+      : 'MUSANTE.MU. ALL RIGHTS RESERVED.';
+  </script>
+</body>
+</html>
